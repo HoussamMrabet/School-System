@@ -13,7 +13,7 @@ class VisitorController extends Controller
      */
     public function index()
     {
-        //
+        return view('index');
     }
 
     /**
@@ -23,7 +23,11 @@ class VisitorController extends Controller
      */
     public function create()
     {
-        //
+        return view('demande.createDemande');
+    }
+
+    public function check(){
+        return view('demande.checkDemande');
     }
 
     /**
