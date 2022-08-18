@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('cin', 12);
             $table->string('anneeScolaire', 24);
             $table->string('note', 256);
+            $table->unsignedBigInteger('document_id');
             $table->foreign('document_id')->references('id')->on('documents')->onDelete('cascade');
             $table->timestamps();
         });
