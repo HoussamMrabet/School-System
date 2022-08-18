@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->id();
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('birthday');
+            $table->string('type');
+            $table->string('status');
             $table->timestamps();
         });
     }
