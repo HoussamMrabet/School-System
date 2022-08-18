@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lname');
             $table->string('birthday');
             $table->string('type');
+            $table->string('Npages');
             $table->string('status');
             $table->timestamps();
         });
