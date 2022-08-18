@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('fullName', 56);
+            $table->string('numInscription', 24);
+            $table->string('cityBirth', 16);
+            $table->string('birthday', 24);
+            $table->string('niveau', 56);
+            $table->string('dateArrete', 24);
+            $table->string('cin', 12);
+            $table->string('anneeScolaire', 24);
+            $table->string('note', 256);
+            $table->foreign('document_id')->references('id')->on('documents')->onDelete('cascade');
             $table->timestamps();
         });
     }
