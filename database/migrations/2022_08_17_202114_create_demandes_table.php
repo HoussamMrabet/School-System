@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('birthday');
-            $table->string('type');
             $table->string('status');
+            $table->integer('quantity');
+            $table->string('type');
             $table->timestamps();
         });
     }
