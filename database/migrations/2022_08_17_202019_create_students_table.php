@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('niveau', 56);
             $table->string('dateArrete', 24);
             $table->string('cin', 12);
+            $table->string('phone_number');
             $table->string('anneeScolaire', 24);
             $table->string('note', 256);
             $table->unsignedBigInteger('document_id');
