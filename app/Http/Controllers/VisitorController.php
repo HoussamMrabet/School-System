@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Demande;
+use App\Models\Demande;
 
 class VisitorController extends Controller
 {
@@ -31,7 +31,11 @@ class VisitorController extends Controller
         $request->validate([
             'fname' => 'required|max:24',
             'lname' => 'required|max:24',
+            'fnameAr' => 'max:24',
+            'lnameAr' => 'max:24',
             'birthday' => 'required',
+            'niveau' => 'required',
+            'dateArret' => 'required',
         ]);
 
         // Fill Demande Row and save it
@@ -39,13 +43,20 @@ class VisitorController extends Controller
 
         $demande->fname = strip_tags($request->input('fname'));
         $demande->lname = strip_tags($request->input('lname'));
+        $demande->fname_ar = strip_tags($request->input('fnameAr'));
+        $demande->lname_ar = strip_tags($request->input('lnameAr'));
         $demande->birthday = strip_tags($request->input('birthday'));
-        $demande->type = strip_tags($request->input('type'));
+        $demande->niveau = strip_tags($request->input('niveau'));
+        $demande->date_arrete = strip_tags($request->input('dateArret'));
+        $demande->attestation = $request->has('attestation')? 1:0;
+        $demande->attestation_ar = $request->has('attestationAr')? 1:0;
+        $demande->releve = $request->has('releve')? 1:0;
+        $demande->releve_ar = $request->has('releveAr')? 1:0;
         $demande->quantity = strip_tags($request->input('quantity'));
 
         $demande->save();
 
-        return redirect()->route('index');
+        return redirect()->route('demande.index');
     }
 
 

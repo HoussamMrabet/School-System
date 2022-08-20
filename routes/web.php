@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/',VisitorController::class);
+Route::resource('demande',VisitorController::class);
 
-Route::get('check', [App\Http\Controllers\VisitorController::class, 'check']);
+Route::get('/check', [App\Http\Controllers\VisitorController::class, 'check'])->name('demande.check');
+Route::get('/', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
