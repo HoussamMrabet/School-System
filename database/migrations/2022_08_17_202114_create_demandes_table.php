@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('lname');
             $table->string('fname_ar');
             $table->string('lname_ar');
+            $table->string('cne');
+            $table->string('phone');
             $table->string('birthday');
             $table->string('niveau');
             $table->string('date_arrete');

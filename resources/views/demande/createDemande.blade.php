@@ -4,11 +4,11 @@
         <form action="{{ route('demande.store') }}" class="form-floating" style="margin-top: 10px" method="POST">
             @csrf
             <div class="mb-3 form-floating">
-                <input type="text" id="floatingInputValue" name="fname" class="form-control">
+                <input type="text" id="floatingInputValue" name="lname" class="form-control">
                 <label for="floatingInputValue">Nom</label>
             </div>
             <div class="mb-3 form-floating">
-                <input type="text" id="floatingInputValue" name="lname" class="form-control">
+                <input type="text" id="floatingInputValue" name="fname" class="form-control">
                 <label for="floatingInputValue">Prenom</label>
             </div>
             <div class="mb-3 form-floating">
@@ -18,6 +18,14 @@
             <div class="mb-3 form-floating">
                 <input type="text" id="floatingInputValue" name="lnameAr" class="form-control">
                 <label for="floatingInputValue">النسب</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="floatingInputValue" name="cne" class="form-control">
+                <label for="floatingInputValue">CNE</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="floatingInputValue" name="phone" class="form-control">
+                <label for="floatingInputValue">Numero de téléphone</label>
             </div>
             <div class="mb-3 form-floating">
                 <input type="text" name="birthday" id="floatingInputValue" class="form-control">
