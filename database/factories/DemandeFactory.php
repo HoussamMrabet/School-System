@@ -22,6 +22,8 @@ class DemandeFactory extends Factory
             'lname' => fake()->lastName(),
             'fname_ar' => fake()->firstName(),
             'lname_ar' => fake()->lastName(),
+            'cne' => fake()->bothify('?######'),
+            'phone' => fake()->numerify('+2126########'),
             'birthday' => fake()->numberBetween(1960,2006),
             'niveau' => fake()->randomElement(['TC', '1er BAC', '2eme Bac']),
             'date_arrete' => fake()->numberBetween(1992, 2022),

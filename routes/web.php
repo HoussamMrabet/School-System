@@ -21,4 +21,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('demande',VisitorController::class);
 
 Route::get('/check', [App\Http\Controllers\VisitorController::class, 'check'])->name('demande.check');
+Route::get('/etat', [App\Http\Controllers\VisitorController::class, 'etat'])->name('demande.etat');
 Route::get('/', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');

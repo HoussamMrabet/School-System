@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('fullName', 56);
             $table->string('numInscription', 24);
-            $table->string('cityBirth', 16);
+            $table->string('cityBirth');
             $table->string('birthday', 24);
             $table->string('niveau', 56);
             $table->string('dateArrete', 24);
-            $table->string('cin', 12);
-            $table->string('phone_number');
+            $table->string('cne', 12);
+            $table->string('phone');
             $table->string('anneeScolaire', 24);
             $table->string('note', 256);
             $table->unsignedBigInteger('document_id');
