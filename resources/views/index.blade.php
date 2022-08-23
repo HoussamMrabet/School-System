@@ -13,8 +13,8 @@
                 <div class="container">
                     <div class="logo"></div>
                     <div class="links">
-                        <a href="#">DEMANDEZ</a>
-                        <a href="#">SUIVER</a>
+                        <a href="{{ route('demande.create') }}">DEMANDEZ</a>
+                        <a href="{{ route('demande.check') }}">SUIVER</a>
                         <a href="#">GUIDE</a>
                     </div>
                 </div>
@@ -29,3 +29,11 @@
             </div>
 </body>
 </html>
+{{-- @extends('layouts.header')
+@section('content')
+    <div class="container">
+        <h1>HOME PAGE</h1>
+        <a style="text-decoration: none;color:aliceblue" href="{{ route('demande.create') }}" ><button class="btn btn-primary">Demander</button></a>
+        <a style="text-decoration: none;color:aliceblue" href="{{ route('demande.check') }}" ><button class="btn btn-success">Verifier</button></a>
+    </div>
+@endsection --}}

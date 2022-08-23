@@ -17,10 +17,19 @@ return new class extends Migration
             $table->id();
             $table->string('fname');
             $table->string('lname');
+            $table->string('fname_ar');
+            $table->string('lname_ar');
+            $table->string('cne');
+            $table->string('phone');
             $table->string('birthday');
-            $table->string('type');
-            $table->string('Npages');
+            $table->string('niveau');
+            $table->string('date_arrete');
             $table->string('status');
+            $table->integer('quantity');
+            $table->boolean('attestation');
+            $table->boolean('attestation_ar');
+            $table->boolean('releve');
+            $table->boolean('releve_ar');
             $table->timestamps();
         });
     }
