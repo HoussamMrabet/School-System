@@ -34,10 +34,9 @@ class VisitorController extends Controller
         ]);
 
         $demande = DB::select('select * from demandes where fname = ? AND lname = ? AND phone = ?', [$request->fname, $request->lname, $request->phone]);
-        //$demande = Demande::whereRaw('fname = ? and lname = ? and phone = ?', [$request->fname,$request->lname, $request->phone])->get();
 
         return view('demande.etatDemande', [
-            'demandes' => $demande,
+            'demande' => $demande,
         ]);
     }
 
@@ -48,11 +47,13 @@ class VisitorController extends Controller
         $request->validate([
             'fname' => 'required|max:24',
             'lname' => 'required|max:24',
-            'fnameAr' => 'max:24',
-            'lnameAr' => 'max:24',
+            'fnameAr' => 'required|max:24',
+            'lnameAr' => 'required|max:24',
             'birthday' => 'required',
+            'phone' => 'required|integer',
             'niveau' => 'required',
             'dateArret' => 'required',
+            'quantity' => 'required|integer',
         ]);
 
         // Fill Demande Row and save it
@@ -80,10 +81,9 @@ class VisitorController extends Controller
 
 
     // Display Demande Status
-    public function show(Request $request)
+    public function show($id)
     {
-//
-        
+        //
     }
 
     public function edit($id)
