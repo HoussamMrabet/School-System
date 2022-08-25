@@ -1,4 +1,11 @@
 @extends('layouts.header')
+@section('homeLink')
+    {{ route('index') }}
+@endsection
+@section('navElements')
+    <li class="nav-item"><a class="nav-link" href="{{ route('demande.create') }}">إيداع الطلب</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ route('demande.check') }}">تتبع الطلب</a></li>
+@endsection
 @section('content')
     <div class="container-sm" style="width: 500px">
         <form action="{{ route('demande.store') }}" class="row g-3 form-floating" style="margin-top: 10px" method="POST">
