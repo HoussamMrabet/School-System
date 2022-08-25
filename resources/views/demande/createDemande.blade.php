@@ -26,9 +26,9 @@
     </div>
 </nav>
 
-<main class="py-4">
-    @section('content')
-        <div class="container-sm" style="width: 500px">
+@section('content')
+    <main style="min-height: 80vh" class="py-4">
+        <div class="container-sm" style="max-width: 500px">
             <form action="{{ route('demande.store') }}" class="row g-3 form-floating" style="margin-top: 10px" method="POST">
                 @csrf
                 <div class="col-md-6 form-floating">
@@ -128,6 +128,12 @@
                     <button type="reset" class="col-md-2 btn btn-secondary"><i class="bi bi-arrow-repeat"></i></button>
                 </div>                
             </form>    
-        </div>    
-    @endsection
-</main>
+        </div> 
+    </main>   
+@endsection
+@section('footer')
+    <!-- Footer-->
+    <footer style="margin-top: auto" class="bg-light py-5">
+        <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - الشريف الادريسي</div></div>
+    </footer>    
+@endsection

@@ -27,5 +27,6 @@
 </head>
 <body>
     @yield('content')
+    @yield('footer')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>    
 </body>
