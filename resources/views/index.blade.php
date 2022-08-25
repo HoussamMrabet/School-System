@@ -1,175 +1,5 @@
 @extends('layouts.header')
 @section('content')
-    <style>
-        html {
-            height: 100%;
-            scroll-padding-top: calc(4.5rem - 1px);
-        }
-
-        body {
-            width: 100%;
-            height: 100%;
-        }
-
-        .page-section {
-            padding: 8rem 0;
-        }
-
-        .text-white-75 {
-            color: rgba(255, 255, 255, 0.75) !important;
-        }
-
-        .btn-xl {
-            padding: 1.25rem 2.25rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 10rem;
-        }
-
-        hr.divider {
-            height: 0.2rem;
-            max-width: 3.25rem;
-            margin: 1.5rem auto;
-            background-color: #11224D;
-            opacity: 1;
-        }
-
-        hr.divider-light {
-            background-color: #fff;
-        }
-
-        #mainNav {
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-            background-color: #fff;
-            transition: background-color 0.2s ease;
-        }
-        #mainNav .navbar-brand {
-            font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-weight: 700;
-            color: #212529;
-        }
-        #mainNav .navbar-nav .nav-item .nav-link {
-            color: #6c757d;
-            font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.75rem 0;
-        }
-        #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-            color: #11224D;
-        }
-        #mainNav .navbar-nav .nav-item .nav-link.active {
-            color: #11224D !important;
-        }
-        @media (min-width: 992px) {
-            #mainNav {
-                box-shadow: none;
-                background-color: transparent;
-            }
-            #mainNav .navbar-brand {
-                color: rgba(255, 255, 255, 0.7);
-            }
-            #mainNav .navbar-brand:hover {
-                color: #fff;
-            }
-            #mainNav .navbar-nav .nav-item .nav-link {
-                color: rgba(255, 255, 255, 0.7);
-                padding: 0 1rem;
-            }
-            #mainNav .navbar-nav .nav-item .nav-link:hover {
-                color: #fff;
-            }
-            #mainNav .navbar-nav .nav-item:last-child .nav-link {
-                padding-right: 0;
-            }
-            #mainNav.navbar-shrink {
-                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-                background-color: #fff;
-            }
-            #mainNav.navbar-shrink .navbar-brand {
-                color: #212529;
-            }
-            #mainNav.navbar-shrink .navbar-brand:hover {
-                color: #11224D;
-            }
-            #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
-                color: #212529;
-            }
-            #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
-                color: #11224D;
-            }
-        }
-
-        header.masthead {
-            padding-top: 10rem;
-            padding-bottom: calc(10rem - 4.5rem);
-            background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("{{ url('img/2.png') }}");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-size: cover;
-        }
-        header.masthead h1, header.masthead .h1 {
-            font-size: 2.25rem;
-        }
-        @media (min-width: 992px) {
-            header.masthead {
-                height: 100vh;
-                min-height: 40rem;
-                padding-top: 4.5rem;
-                padding-bottom: 0;
-            }
-            header.masthead p {
-                font-size: 1.15rem;
-            }
-            header.masthead h1, header.masthead .h1 {
-                font-size: 3rem;
-            }
-            }
-            @media (min-width: 1200px) {
-            header.masthead h1, header.masthead .h1 {
-                font-size: 3.5rem;
-            }
-        }
-
-        #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
-            max-width: 1920px;
-        }
-        #portfolio .container-fluid .portfolio-box, #portfolio .container-sm .portfolio-box, #portfolio .container-md .portfolio-box, #portfolio .container-lg .portfolio-box, #portfolio .container-xl .portfolio-box, #portfolio .container-xxl .portfolio-box {
-            position: relative;
-            display: block;
-        }
-        #portfolio .container-fluid .portfolio-box .portfolio-box-caption, #portfolio .container-sm .portfolio-box .portfolio-box-caption, #portfolio .container-md .portfolio-box .portfolio-box-caption, #portfolio .container-lg .portfolio-box .portfolio-box-caption, #portfolio .container-xl .portfolio-box .portfolio-box-caption, #portfolio .container-xxl .portfolio-box .portfolio-box-caption {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            bottom: 0;
-            text-align: center;
-            opacity: 0;
-            color: #fff;
-            background: rgba(244, 98, 58, 0.9);
-            transition: opacity 0.25s ease;
-            text-align: center;
-        }
-        #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-category {
-            font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-name {
-            font-size: 1.2rem;
-        }
-        #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
-            opacity: 1;
-        }
-    </style>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
@@ -206,10 +36,12 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">We've got what you need!</h2>
+                    <h2 class="text-white mt-0">! معلومات عامة</h2>
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                    <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                    <p class="text-white-75 mb-4">هذا الموقع خاص بتلاميذ ثانوية الشريف الادريسي<br>
+                        يتيح لك الموقع فرصة طلب الوثائق الخاصة بك كالشواهد المدرسية او بيان النقط لتوفير الوقت على التلاميذ و المسؤولين
+                    </p>
+                    <a class="btn btn-light btn-xl" href="#services">! ابدا من هنا</a>
                 </div>
             </div>
         </div>
@@ -253,10 +85,8 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">We've got what you need!</h2>
+                    <h2 class="text-white mt-0">اسئلة متكررة</h2>
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                    <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
                 </div>
             </div>
         </div>
@@ -266,7 +96,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <h2 class="mt-0">Let's Get In Touch!</h2>
+                    <h2 class="mt-0">مساعدة</h2>
                     <hr class="divider" />
                     <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
                 </div>
@@ -279,65 +109,4 @@
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - الشريف الادريسي</div></div>
     </footer>    
-    <script>
-        /*!
-        * Start Bootstrap - Creative v7.0.6 (https://startbootstrap.com/theme/creative)
-        * Copyright 2013-2022 Start Bootstrap
-        * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
-        */
-        //
-        // Scripts
-        // 
-
-        window.addEventListener('DOMContentLoaded', event => {
-
-        // Navbar shrink function
-        var navbarShrink = function () {
-            const navbarCollapsible = document.body.querySelector('#mainNav');
-            if (!navbarCollapsible) {
-                return;
-            }
-            if (window.scrollY === 0) {
-                navbarCollapsible.classList.remove('navbar-shrink')
-            } else {
-                navbarCollapsible.classList.add('navbar-shrink')
-            }
-
-        };
-
-        // Shrink the navbar 
-        navbarShrink();
-
-        // Shrink the navbar when page is scrolled
-        document.addEventListener('scroll', navbarShrink);
-
-        // Activate Bootstrap scrollspy on the main nav element
-        const mainNav = document.body.querySelector('#mainNav');
-        if (mainNav) {
-            new bootstrap.ScrollSpy(document.body, {
-                target: '#mainNav',
-                offset: 74,
-            });
-        };
-
-        // Collapse responsive navbar when toggler is visible
-        const navbarToggler = document.body.querySelector('.navbar-toggler');
-        const responsiveNavItems = [].slice.call(
-            document.querySelectorAll('#navbarResponsive .nav-link')
-        );
-        responsiveNavItems.map(function (responsiveNavItem) {
-            responsiveNavItem.addEventListener('click', () => {
-                if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                    navbarToggler.click();
-                }
-            });
-        });
-
-        // Activate SimpleLightbox plugin for portfolio items
-        new SimpleLightbox({
-            elements: '#portfolio a.portfolio-box'
-        });
-
-        });
-    </script>
 @endsection

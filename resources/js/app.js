@@ -2,17 +2,8 @@ import './bootstrap';
 import '../sass/app.scss';
 import * as bootstrap from 'bootstrap';
 
-/*!
-* Start Bootstrap - Creative v7.0.6 (https://startbootstrap.com/theme/creative)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
-
+            
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -54,10 +45,4 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
-    // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
-
 });
