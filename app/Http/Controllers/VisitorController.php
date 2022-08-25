@@ -30,7 +30,10 @@ class VisitorController extends Controller
         $request->validate([
             'fname' => 'required',
             'lname' => 'required',
-            'phone' => 'required',
+            'fnameAr' => 'required',
+            'lnameAr' => 'required',
+            'birthday' => 'required',
+            'phone' => 'nullable|regex:/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im',
         ]);
 
         $demande = DB::select('select * from demandes where fname = ? AND lname = ? AND phone = ?', [$request->fname, $request->lname, $request->phone]);
@@ -45,15 +48,12 @@ class VisitorController extends Controller
     {
         // form fill validation
         $request->validate([
-            'fname' => 'required|max:24',
-            'lname' => 'required|max:24',
-            'fnameAr' => 'required|max:24',
-            'lnameAr' => 'required|max:24',
+            'fname' => 'required',
+            'lname' => 'required',
+            'fnameAr' => 'required',
+            'lnameAr' => 'required',
             'birthday' => 'required',
-            'phone' => 'required|integer',
-            'niveau' => 'required',
-            'dateArret' => 'required',
-            'quantity' => 'required|integer',
+            'phone' => 'nullable|regex:/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im',
         ]);
 
         // Fill Demande Row and save it
